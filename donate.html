@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate TON — Gentboom</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .donate-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .ton-icon {
+            font-size: 3rem;
+            color: #0088cc;
+            margin-bottom: 1rem;
+        }
+        .donate-address {
+            font-family: monospace;
+            background: rgba(0,0,0,0.4);
+            padding: 1rem;
+            border-radius: 16px;
+            word-break: break-all;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+        .tonkeeper-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #0088cc;
+            color: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin: 0.5rem 0;
+        }
+        .tonkeeper-btn:hover {
+            background: #006699;
+            transform: scale(1.02);
+        }
+        .copy-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <main class="container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> На главную
+        </a>
+        <div class="profile">
+            <h1><i class="fas fa-heart"></i> Поддержать проекты</h1>
+            <p class="bio">Ваше пожертвование помогает развитию открытого кода</p>
+        </div>
+
+        <div class="donate-card">
+            <div class="ton-icon"><i class="fab fa-telegram-plane"></i> TON</div>
+            <div class="donate-address" id="ton-address">UQA1h29QR_hgqWcduwnnEvIaEaGOxqCFuqp--Udu6x_RIsxH</div>
+            <a href="https://tonkeeper.com/" target="_blank" class="tonkeeper-btn">
+                <i class="fas fa-wallet"></i> Открыть в Tonkeeper
+            </a>
+            <br>
+            <button class="copy-btn" onclick="copyToClipboard()">Скопировать адрес</button>
+        </div>
+
+        <footer class="footer">
+            <p>Спасибо за поддержку!</p>
+            <p>Разработчик: deepseek</p>
+        </footer>
+    </main>
+    <script>
+        function copyToClipboard() {
+            const address = "UQA1h29QR_hgqWcduwnnEvIaEaGOxqCFuqp--Udu6x_RIsxH";
+            navigator.clipboard.writeText(address).then(() => {
+                const btn = event.target;
+                const originalText = btn.innerText;
+                btn.innerText = 'Скопировано!';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
