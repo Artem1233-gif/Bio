@@ -23,3 +23,16 @@
 - Google Fonts
 
 ## 📂 Структура
+gentboom-website/
+├── index.html
+├── styles.css
+├── script.js
+├── stars.html
+├── donate.html
+├── channel.html
+└── README.md
+## 🚀 Запуск
+
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/Artem1233-gif/gentboom-website.git
